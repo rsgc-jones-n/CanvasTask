@@ -16,6 +16,7 @@
 		81EAC5A41D87DF52005DD91D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81EAC5A31D87DF52005DD91D /* Helper.swift */; };
 		81F1943C1EABB91100832CA6 /* EnhancedCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1943A1EABB91100832CA6 /* EnhancedCanvas.swift */; };
 		81F1943D1EABB91100832CA6 /* LindenmayerSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F1943B1EABB91100832CA6 /* LindenmayerSystem.swift */; };
+		F658B03D1EBCACB300DD72E7 /* Colour.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658B03C1EBCACB300DD72E7 /* Colour.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		81EAC5A31D87DF52005DD91D /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		81F1943A1EABB91100832CA6 /* EnhancedCanvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnhancedCanvas.swift; sourceTree = "<group>"; };
 		81F1943B1EABB91100832CA6 /* LindenmayerSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LindenmayerSystem.swift; sourceTree = "<group>"; };
+		F658B03C1EBCACB300DD72E7 /* Colour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colour.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				81F1943A1EABB91100832CA6 /* EnhancedCanvas.swift */,
 				81F1943B1EABB91100832CA6 /* LindenmayerSystem.swift */,
 				81678C531EBA34D3006FB3B9 /* VisualizedLindenmayerSystem.swift */,
+				F658B03C1EBCACB300DD72E7 /* Colour.swift */,
 				81EAC5A31D87DF52005DD91D /* Helper.swift */,
 				81064A091C130A10007ED524 /* AppDelegate.swift */,
 				81064A0B1C130A10007ED524 /* ViewController.swift */,
@@ -161,6 +164,7 @@
 				81064A0C1C130A10007ED524 /* ViewController.swift in Sources */,
 				81F1943D1EABB91100832CA6 /* LindenmayerSystem.swift in Sources */,
 				81EAC5A41D87DF52005DD91D /* Helper.swift in Sources */,
+				F658B03D1EBCACB300DD72E7 /* Colour.swift in Sources */,
 				81678C541EBA34D3006FB3B9 /* VisualizedLindenmayerSystem.swift in Sources */,
 				81F1943C1EABB91100832CA6 /* EnhancedCanvas.swift in Sources */,
 				81064A1C1C132DA2007ED524 /* Sketch.swift in Sources */,
