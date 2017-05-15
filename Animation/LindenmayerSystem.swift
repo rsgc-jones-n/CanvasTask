@@ -4,14 +4,14 @@ public class LindenmayerSystem {
     // Set up required information
     var angle : Degrees                 // rotation amount for turtle (degrees)
     var axiom : String
-    var rule : String
+    var rule : [Character : String]
     var n : Int                         // number of times the production rule is applied
     var word : [String] = []            // the word that will be rendered
                                         // is rendered with an animation, step by step
     
     public init(angle : Degrees,
                 axiom : String,
-                rule : String,
+                rule : [Character : String],
                 generations : Int) {
         
         // Initialize stored properties

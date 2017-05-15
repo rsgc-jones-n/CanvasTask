@@ -114,7 +114,7 @@ class Sketch : NSObject {
     func draw() {
         
         // Render the current system
-        canvas.renderAnimated(system: largeKochIsland, generation: 2)
+        canvas.renderAnimated(system: mediumKochSwirl, generation: 2)
         
     }
     
