@@ -38,7 +38,7 @@ class Sketch : NSObject {
         // Set up a Koch snowflake
         kochSnowflake = LindenmayerSystem(angle: 60,
                                           axiom: "F++F++F",
-                                          rule: "F-F++F-F",
+                                          rule: ["F":"F-F++F-F"],
                                           generations: 5)
         
         // Visualize this as a small snowflake
@@ -63,7 +63,7 @@ class Sketch : NSObject {
         // Set up a Koch Island
         kochIsland = LindenmayerSystem(angle: 90,
                                        axiom: "1F-F-2F-3F",
-                                       rule: "F-F+F+FF-F-F+F",
+                                       rule: ["F":"F-F+F+FF-F-F+F"],
                                        generations: 5)
         
         // Visualize the Koch Island
@@ -78,7 +78,7 @@ class Sketch : NSObject {
         // Set up a Koch Swirl
         kochSwirl = LindenmayerSystem(angle: 90,
                                       axiom: "-F",
-                                      rule: "F+F-F-F+F",
+                                      rule: ["F":"F+F-F-F+F"],
                                       generations: 4)
         
         // Visualize the Koch Swirl
@@ -93,7 +93,7 @@ class Sketch : NSObject {
         // Set up another Koch construction
         kochConstruction = LindenmayerSystem(angle: 90,
                                              axiom: "F-F-F-F",
-                                             rule: "FF-F-F-F-F-F+F",
+                                             rule: ["F":"FF-F-F-F-F-F+F"],
                                              generations: 3)
         
         // Visualize this other Koch construction

@@ -56,7 +56,7 @@ public class LindenmayerSystem {
                     if character == "F" {
                         
                         // apply production rule, replace "old" F with new string
-                        newWord.append(rule)
+                        newWord.append(rule["F"]!)
                         
                     } else {
                         
