@@ -68,12 +68,12 @@ class Sketch : NSObject {
         
         // Visualize the Koch Island
         largeKochIsland = VisualizedLindenmayerSystem(with: kochIsland,
-                                                       length: 300,
-                                                       reduction: 4,
-                                                       x: 100,
-                                                       y: 400,
-                                                       direction: 10,
-                                                       colours: ["1": Colour(hue: 240, saturation: 80, brightness: 90), "2": Colour(hue: 0, saturation: 80, brightness: 90), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
+                                                      length: 300,
+                                                      reduction: 4,
+                                                      x: 100,
+                                                      y: 400,
+                                                      direction: 10,
+                                                      colours: ["1": Colour(hue: 240, saturation: 80, brightness: 90), "2": Colour(hue: 0, saturation: 80, brightness: 90), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
         
         // Set up a Koch Swirl
         kochSwirl = LindenmayerSystem(angle: 90,
@@ -89,7 +89,7 @@ class Sketch : NSObject {
                                                       y: 400,
                                                       direction: 0,
                                                       colours: ["1": Colour(hue: 240, saturation: 80, brightness: 90), "2": Colour(hue: 0, saturation: 80, brightness: 90), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
-
+        
         // Set up another Koch construction
         kochConstruction = LindenmayerSystem(angle: 90,
                                              axiom: "F-F-F-F",
@@ -114,7 +114,7 @@ class Sketch : NSObject {
     func draw() {
         
         // Render the current system
-        canvas.renderAnimated(system: mediumKochSwirl, generation: 2)
+        canvas.renderAnimated(system: mediumConstruction, generation: 2)
         
     }
     

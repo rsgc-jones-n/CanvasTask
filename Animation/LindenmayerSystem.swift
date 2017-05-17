@@ -7,7 +7,7 @@ public class LindenmayerSystem {
     var rule : [Character : String]
     var n : Int                         // number of times the production rule is applied
     var word : [String] = []            // the word that will be rendered
-                                        // is rendered with an animation, step by step
+    // is rendered with an animation, step by step
     
     public init(angle : Degrees,
                 axiom : String,
@@ -53,19 +53,23 @@ public class LindenmayerSystem {
                 // Inspect each character of existing word
                 for character in word[i - 1].characters {
                     
-                    if character == "F" {
+                    
+                    switch character {
                         
-                        // apply production rule, replace "old" F with new string
-                        newWord.append(rule["F"]!)
+                    case "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" :
                         
-                    } else {
+                        if let successor = rule[character] {
+                            newWord.append(successor)
+                        }
                         
-                        // just copy what's in the existing word to the new word
+                    default:
+                        
                         newWord.append(character)
                         
                     }
                     
                 }
+                
                 
                 // Add the re-written word to the system
                 word.append(newWord)
