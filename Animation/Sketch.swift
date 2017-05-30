@@ -19,6 +19,7 @@ class Sketch : NSObject {
     let kochIsland : LindenmayerSystem
     let kochSwirl : LindenmayerSystem
     let kochConstruction : LindenmayerSystem
+    let palmTree : LindenmayerSystem
     
     // Create the visualizations of the snowflake
     let smallKochSnowflake : VisualizedLindenmayerSystem
@@ -28,6 +29,7 @@ class Sketch : NSObject {
     let largeKochIsland : VisualizedLindenmayerSystem
     let mediumKochSwirl : VisualizedLindenmayerSystem
     let mediumConstruction : VisualizedLindenmayerSystem
+    let mediumPalmTree : VisualizedLindenmayerSystem
     
     // This runs once, equivalent to setup() in Processing
     override init() {
@@ -105,6 +107,22 @@ class Sketch : NSObject {
                                                          direction: 0,
                                                          colours: ["1": Colour(hue: 240, saturation: 80, brightness: 90), "2": Colour(hue: 0, saturation: 80, brightness: 90), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
         
+        // Set up a Palm Tree
+        palmTree = LindenmayerSystem(angle: 10,
+                                     axiom: "[TTTTTTT][+++++++++ffffffffffffff+++++++++BBBBB][]",
+                                     rule: ["T":"FFF++++++++++++FF++++++F++++++FF---------------ff---------",
+                                            "B":"FF+++F------------------f++++++++++++++++"
+                                            ],
+                                     generations: 1)
+        
+        // Visualize a Palm Tree
+        mediumPalmTree = VisualizedLindenmayerSystem(with: palmTree, length: 25,
+                                                     reduction: 2,
+                                                     x: 235, y: 40,
+                                                     direction: 0,
+                                                     colours: ["1": Colour(hue: 240, saturation: 80, brightness: 90), "2": Colour(hue: 0, saturation: 80, brightness: 90), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
+        
+        
         // The frame rate can be adjusted; the default is 60 fps
         canvas.framesPerSecond = 60
         
@@ -114,7 +132,7 @@ class Sketch : NSObject {
     func draw() {
         
         // Render the current system
-        canvas.renderAnimated(system: mediumConstruction, generation: 2)
+        canvas.renderAnimated(system: [mediumPalmTree, mediumKochSwirl], generations: [1, 2])
         
     }
     

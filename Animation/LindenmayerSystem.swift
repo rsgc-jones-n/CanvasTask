@@ -7,7 +7,7 @@ public class LindenmayerSystem {
     var rule : [Character : String]
     var n : Int                         // number of times the production rule is applied
     var word : [String] = []            // the word that will be rendered
-    // is rendered with an animation, step by step
+                                        // is rendered with an animation, step by step
     
     public init(angle : Degrees,
                 axiom : String,
@@ -41,27 +41,27 @@ public class LindenmayerSystem {
     
     func applyRules() {
         
-        // See if word needs to be re-written
+        // Analyze word
         if n > 0 {
             
-            // Apply the production rule "n" times
             for i in 1...n {
                 
-                // Create a new word
+                // Create new word
                 var newWord = ""
                 
-                // Inspect each character of existing word
+                // Itterate through characters in the word
                 for character in word[i - 1].characters {
                     
-                    
                     switch character {
-                        
+                      
+                    // In the case of an uppercase letter...
                     case "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" :
                         
                         if let successor = rule[character] {
                             newWord.append(successor)
                         }
                         
+                        // Else...
                     default:
                         
                         newWord.append(character)
@@ -77,7 +77,7 @@ public class LindenmayerSystem {
             }
             
         }
-        
+        print(word)
     }
     
 }
