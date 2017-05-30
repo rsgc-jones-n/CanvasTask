@@ -21,7 +21,7 @@ public class EnhancedCanvas : Canvas {
         
         // Render word
         self.saveState()
-        self.translate(byX: system.x, byY: system.y)
+        //self.translate(byX: system.x, byY: system.y)
         for c in system.word[generation].characters {
             interpret(character: c, forThis: system)
         }
@@ -61,7 +61,7 @@ public class EnhancedCanvas : Canvas {
 
             }
             
-            // Don't render past the last variable
+            // Don't go past the last variable
             if sys.animationPosition < sys.word[generation].characters.count {
                 
                 // Nect character...
@@ -85,7 +85,6 @@ public class EnhancedCanvas : Canvas {
         
         let newX: Float = Float(CGFloat(system.x)) + Float(CGFloat(system.currentLength) * CGFloat(cos(system.currentAngle * CGFloat(M_PI)/180)))
         let newY: Float = Float(CGFloat(system.y)) + Float(CGFloat(system.currentLength) * CGFloat(sin(system.currentAngle * CGFloat(M_PI)/180)))
-        print(defaultLineWidth)
         
         // Interpret each character of the word
         switch character {

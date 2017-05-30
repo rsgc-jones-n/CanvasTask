@@ -109,15 +109,20 @@ class Sketch : NSObject {
         
         // Set up a Palm Tree
         palmTree = LindenmayerSystem(angle: 10,
-                                     axiom: "[TTTTTTT][+++++++++ffffffffffffff+++++++++BBBBB][]",
+                                     axiom: "[TTTTTTT][[X[[BBBBB]+++[BBBB]++[BBB]][---BBB]] [Z[[CCCCC]--[CCCC]---[CC]]+++[CCC]][Y-B][WC]]",
                                      rule: ["T":"FFF++++++++++++FF++++++F++++++FF---------------ff---------",
-                                            "B":"FF+++F------------------f++++++++++++++++"
+                                            "X":"+++++++++ffffffffffffff+++++++++",
+                                            "Y":"f+++++++++fffffffffffffff+++++++",
+                                            "W":"f+++++++++fffffffffffffff---------f+++",
+                                            "Z":"+++++++++ffffffffffffff---------fff",
+                                            "B":"FF+++F------------------f++++++++++++++++",
+                                            "C":"FF---F++++++++++++++++++f----------------"
                                             ],
                                      generations: 1)
         
         // Visualize a Palm Tree
         mediumPalmTree = VisualizedLindenmayerSystem(with: palmTree, length: 25,
-                                                     reduction: 2,
+                                                     reduction: 3,
                                                      x: 235, y: 40,
                                                      direction: 0,
                                                      colours: ["1": Colour(hue: 240, saturation: 80, brightness: 90), "2": Colour(hue: 0, saturation: 80, brightness: 90), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
@@ -132,8 +137,7 @@ class Sketch : NSObject {
     func draw() {
         
         // Render the current system
-        canvas.renderAnimated(system: [smallKochSnowflake, mediumPalmTree], generations: [3, 1])
-        
+        canvas.renderAnimated(system: [mediumPalmTree], generations: [1])
     }
     
     // Respond to the mouseDown event
