@@ -109,7 +109,7 @@ class Sketch : NSObject {
         
         // Set up a Palm Tree
         palmTree = LindenmayerSystem(angle: 10,
-                                     axiom: "[TTTTTTT][[X[[BBBBB]+++[BBBB]++[BBB]][---BBB]] [Z[[CCCCC]--[CCCC]---[CC]]+++[CCC]][Y-B][WC]]",
+                                     axiom: "1[TTTTTTT]2[[X[[BBBBB]+++[BBBB]++[BBB]][---BBB]] [Z[[CCCCC]--[CCCC]---[CC]]+++[CCC]][Y-B][WC]]",
                                      rule: ["T":"FFF++++++++++++FF++++++F++++++FF---------------ff---------",
                                             "X":"+++++++++ffffffffffffff+++++++++",
                                             "Y":"f+++++++++fffffffffffffff+++++++",
@@ -125,7 +125,7 @@ class Sketch : NSObject {
                                                      reduction: 3,
                                                      x: 235, y: 40,
                                                      direction: 0,
-                                                     colours: ["1": Colour(hue: 240, saturation: 80, brightness: 90), "2": Colour(hue: 0, saturation: 80, brightness: 90), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
+                                                     colours: ["1": Colour(hue: 27, saturation: 19, brightness: 23), "2": Colour(hue: 108, saturation: 38, brightness: 30), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
         
         
         // The frame rate can be adjusted; the default is 60 fps
