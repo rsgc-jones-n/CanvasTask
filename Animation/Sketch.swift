@@ -132,7 +132,7 @@ class Sketch : NSObject {
     func draw() {
         
         // Render the current system
-        canvas.renderAnimated(system: [mediumPalmTree, mediumKochSwirl], generations: [1, 2])
+        canvas.renderAnimated(system: [smallKochSnowflake, mediumPalmTree], generations: [3, 1])
         
     }
     

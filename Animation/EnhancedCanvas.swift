@@ -16,6 +16,9 @@ public class EnhancedCanvas : Canvas {
             generation = system.n
         }
         
+        // Edit line length
+        system.currentLength = Float( Double(system.initialLength) / pow(Double(system.reduction), Double(generation)) )
+        
         // Render word
         self.saveState()
         self.translate(byX: system.x, byY: system.y)
@@ -34,11 +37,6 @@ public class EnhancedCanvas : Canvas {
         
         for sys in system {
             
-            // Make sure generation exists
-            if generation > sys.n {
-                generation = sys.n
-            }
-            
             // Verify that generation that was asked to be rendered actually exists
             if generations.count > i {
                 
@@ -50,9 +48,17 @@ public class EnhancedCanvas : Canvas {
                 
             }
             
+            // Make sure generation exists
+            if generation > sys.n {
+                generation = sys.n
+            }
+            
             // Set starting variables
             if sys.animationPosition == 0 {
-                // Set starting variables
+                
+                // Set starting variables and apply reduction rules
+                sys.currentLength = Float(Double(sys.initialLength) / pow(Double(sys.reduction), Double(generation)))
+
             }
             
             // Don't render past the last variable
