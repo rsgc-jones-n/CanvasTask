@@ -30,6 +30,7 @@ class Sketch : NSObject {
     let mediumKochSwirl : VisualizedLindenmayerSystem
     let mediumConstruction : VisualizedLindenmayerSystem
     let mediumPalmTree : VisualizedLindenmayerSystem
+    let largePalmTree : VisualizedLindenmayerSystem
     
     // This runs once, equivalent to setup() in Processing
     override init() {
@@ -125,7 +126,8 @@ class Sketch : NSObject {
                                                      reduction: 3,
                                                      x: 235, y: 40,
                                                      direction: 0,
-                                                     colours: ["1": Colour(hue: 27, saturation: 19, brightness: 23), "2": Colour(hue: 108, saturation: 38, brightness: 30), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
+                                                     colours: ["1": Colour(hue: 27, saturation: 70, brightness: 40), "2": Colour(hue: 125, saturation: 80, brightness: 50), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
+        largePalmTree = VisualizedLindenmayerSystem(with: palmTree, length: 25, reduction: 2, x: 400, y: 40, direction: 0, colours: ["1": Colour(hue: 27, saturation: 70, brightness: 40), "2": Colour(hue: 125, saturation: 80, brightness: 50), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
         
         
         // The frame rate can be adjusted; the default is 60 fps
@@ -137,7 +139,7 @@ class Sketch : NSObject {
     func draw() {
         
         // Render the current system
-        canvas.renderAnimated(system: [mediumPalmTree], generations: [1])
+        canvas.renderAnimated(system: [mediumPalmTree, largePalmTree], generations: [1, 1])
     }
     
     // Respond to the mouseDown event

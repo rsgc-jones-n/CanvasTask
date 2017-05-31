@@ -116,8 +116,8 @@ public class EnhancedCanvas : Canvas {
             system.systemStack.removeLast()
         case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" :
             // Change colour
-            
-            
+            let setColour = Color(hue: system.colours[String(character)]!.hue, saturation: system.colours[String(character)]!.saturation, brightness: system.colours[String(character)]!.brightness, alpha: 100)
+            self.lineColor = setColour
         default:
             break
             
