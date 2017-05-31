@@ -20,6 +20,7 @@ class Sketch : NSObject {
     let kochSwirl : LindenmayerSystem
     let kochConstruction : LindenmayerSystem
     let palmTree : LindenmayerSystem
+    let bushConstruction : LindenmayerSystem
     
     // Create the visualizations of the snowflake
     let smallKochSnowflake : VisualizedLindenmayerSystem
@@ -31,6 +32,8 @@ class Sketch : NSObject {
     let mediumConstruction : VisualizedLindenmayerSystem
     let mediumPalmTree : VisualizedLindenmayerSystem
     let largePalmTree : VisualizedLindenmayerSystem
+    let mediumBush : VisualizedLindenmayerSystem
+    let smallPalmTree : VisualizedLindenmayerSystem
     
     // This runs once, equivalent to setup() in Processing
     override init() {
@@ -108,6 +111,21 @@ class Sketch : NSObject {
                                                          direction: 0,
                                                          colours: ["1": Colour(hue: 240, saturation: 80, brightness: 90), "2": Colour(hue: 0, saturation: 80, brightness: 90), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
         
+        // Set up a bush 
+        bushConstruction = LindenmayerSystem(angle: 22,
+                                             axiom: "1F-F-F-F",
+                                             rule: ["F":"FF-[-F+F+F]+[+F-F-F]"],
+                                             generations: 4)
+        // Visualize a bush
+        mediumBush = VisualizedLindenmayerSystem(with: bushConstruction,
+                                                    length: 20,
+                                                    reduction: 2,
+                                                    x: 60,
+                                                    y: 100,
+                                                    direction: 90,
+                                                    colours: ["1": Colour(hue: 27, saturation: 70, brightness: 40), "2": Colour(hue: 125, saturation: 80, brightness: 50), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
+        
+        
         // Set up a Palm Tree
         palmTree = LindenmayerSystem(angle: 10,
                                      axiom: "1[TTTTTTT]2[[X[[BBBBB]+++[BBBB]++[BBB]][---BBB]] [Z[[CCCCC]--[CCCC]---[CC]]+++[CCC]][Y-B][WC]]",
@@ -122,12 +140,26 @@ class Sketch : NSObject {
                                      generations: 1)
         
         // Visualize a Palm Tree
-        mediumPalmTree = VisualizedLindenmayerSystem(with: palmTree, length: 25,
+        mediumPalmTree = VisualizedLindenmayerSystem(with: palmTree,
+                                                     length: 25,
                                                      reduction: 3,
-                                                     x: 235, y: 40,
+                                                     x: 60, y: 180,
                                                      direction: 0,
                                                      colours: ["1": Colour(hue: 27, saturation: 70, brightness: 40), "2": Colour(hue: 125, saturation: 80, brightness: 50), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
-        largePalmTree = VisualizedLindenmayerSystem(with: palmTree, length: 25, reduction: 2, x: 400, y: 40, direction: 0, colours: ["1": Colour(hue: 27, saturation: 70, brightness: 40), "2": Colour(hue: 125, saturation: 80, brightness: 50), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
+        largePalmTree = VisualizedLindenmayerSystem(with: palmTree,
+                                                    length: 25,
+                                                    reduction: 2,
+                                                    x: 400,
+                                                    y: 40,
+                                                    direction: 0,
+                                                    colours: ["1": Colour(hue: 27, saturation: 70, brightness: 40), "2": Colour(hue: 125, saturation: 80, brightness: 50), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
+        smallPalmTree = VisualizedLindenmayerSystem(with: palmTree,
+                                                    length: 25,
+                                                    reduction: 4,
+                                                    x: 200,
+                                                    y: 300,
+                                                    direction: 0,
+                                                    colours: ["1": Colour(hue: 27, saturation: 70, brightness: 40), "2": Colour(hue: 125, saturation: 80, brightness: 50), "3": Colour(hue: 120, saturation: 80, brightness: 90)])
         
         
         // The frame rate can be adjusted; the default is 60 fps
@@ -139,7 +171,8 @@ class Sketch : NSObject {
     func draw() {
         
         // Render the current system
-        canvas.renderAnimated(system: [mediumPalmTree, largePalmTree], generations: [1, 1])
+        canvas.renderAnimated(system: [mediumPalmTree, largePalmTree, mediumBush, smallPalmTree], generations: [1, 1, 1, 1])
+
     }
     
     // Respond to the mouseDown event
